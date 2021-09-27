@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+    public name = 'Stratos';
+    public surname = 'Samaras';
+    public acronym: string;
+
     constructor() {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.acronym = this.name.charAt(0) + this.surname.charAt(0);
+    }
 }
