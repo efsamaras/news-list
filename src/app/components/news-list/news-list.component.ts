@@ -1,9 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { NewsService, NewsSource } from '../../services/news.service';
 import { PageEvent } from '@angular/material/paginator';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { UrlParams } from '../main-page/main-page.component';
 
 @Component({
     selector: 'app-news-list',
@@ -11,16 +12,18 @@ import { debounceTime } from 'rxjs/operators';
     styleUrls: ['./news-list.component.scss'],
 })
 export class NewsListComponent implements OnInit, OnDestroy {
+    @Input() searchInput: string;
+    @Input() selectedCategory: string;
+    @Input() pageIndex: number;
+
+    @Output() listFiltered = new EventEmitter<UrlParams>();
+
     public newsSources: NewsSource[];
     public pageNewsSources: NewsSource[]; // news sources of the visible page
     public totalNews = 0;
     public categories: string[];
 
-    public pageIndex = 0;
     public readonly pageSize = 6;
-
-    public searchInput: string;
-    public selectedCategory: string;
 
     public readonly searchFormControl = new FormControl();
     public readonly categoryFormControl = new FormControl();
@@ -38,6 +41,9 @@ export class NewsListComponent implements OnInit, OnDestroy {
             this.filterData();
         });
 
+        this.searchFormControl.setValue(this.searchInput);
+        this.categoryFormControl.setValue(this.selectedCategory);
+
         this.onSearchSub = this.searchFormControl.valueChanges.pipe(debounceTime(300)).subscribe((value) => {
             this.searchInput = value;
             this.pageIndex = 0;
@@ -51,7 +57,7 @@ export class NewsListComponent implements OnInit, OnDestroy {
         });
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this.onSearchSub?.unsubscribe();
         this.onSelectCategorySub?.unsubscribe();
     }
@@ -76,5 +82,7 @@ export class NewsListComponent implements OnInit, OnDestroy {
         const start = this.pageIndex * this.pageSize;
         const end = Math.min(start + this.pageSize, this.newsSources.length);
         this.pageNewsSources = filteredNewsSources.slice(start, end);
+
+        this.listFiltered.emit({ category: this.selectedCategory, search: this.searchInput, page: this.pageIndex + 1 });
     }
 }

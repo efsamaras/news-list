@@ -1,5 +1,10 @@
 <app-header></app-header>
 <div class="main-page-content">
-    <app-news-list></app-news-list>
+    <app-news-list
+        [searchInput]="searchInput"
+        [selectedCategory]="category"
+        [pageIndex]="page"
+        (listFiltered)="onFilter($event)"
+    ></app-news-list>
 </div>
 <app-footer></app-footer>
