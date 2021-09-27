@@ -10,10 +10,26 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     declarations: [AppComponent, MainPageComponent, HeaderComponent, FooterComponent, NewsListComponent],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, MatGridListModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatGridListModule,
+        MatPaginatorModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })
