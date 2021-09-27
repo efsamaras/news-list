@@ -1,6 +1,13 @@
 .main-page-content {
     padding-bottom: 80px;
+
+    app-news-list {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
 }
+
 app-footer {
     position: absolute;
     bottom: 0;

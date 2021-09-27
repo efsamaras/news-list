@@ -1,0 +1,11 @@
+<div *ngIf="pageNewsSources?.length">
+    <mat-grid-list cols="3" rowHeight="2:1" gutterSize="25px">
+        <mat-grid-tile *ngFor="let newsSource of pageNewsSources">
+            <div>
+                <div>{{ newsSource.name }}</div>
+                <div>{{ newsSource.description }}</div>
+                <div>{{ newsSource.category }}</div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
