@@ -18,7 +18,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { NewsSourceComponent } from './components/news-source/news-source.component';
 
 @NgModule({
-    declarations: [AppComponent, MainPageComponent, HeaderComponent, FooterComponent, NewsListComponent, NewsSourceComponent],
+    declarations: [
+        AppComponent,
+        MainPageComponent,
+        HeaderComponent,
+        FooterComponent,
+        NewsListComponent,
+        NewsSourceComponent,
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
