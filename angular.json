@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "kiss-my-button": {
+        "news-list": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -20,7 +20,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/kiss-my-button",
+                        "outputPath": "dist/news-list",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -70,10 +70,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "kiss-my-button:build:production"
+                            "browserTarget": "news-list:build:production"
                         },
                         "development": {
-                            "browserTarget": "kiss-my-button:build:development"
+                            "browserTarget": "news-list:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "kiss-my-button:build"
+                        "browserTarget": "news-list:build"
                     }
                 },
                 "test": {
@@ -103,5 +103,5 @@
             }
         }
     },
-    "defaultProject": "kiss-my-button"
+    "defaultProject": "news-list"
 }
