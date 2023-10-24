@@ -1,27 +1,52 @@
 # News List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+News List is an Angular-based single-page application that fetches and displays news sources from the News API provided by [newsapi.org](https://newsapi.org). This project aims to demonstrate essential front-end development concepts using Angular.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+-   [Features](#features)
+-   [Prerequisites](#prerequisites)
+-   [Installation](#installation)
+-   [Usage](#usage)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The application offers the following features:
 
-## Build
+-   Pagination for navigating between pages of news sources.
+-   A search input for filtering sources by name.
+-   A category filter for narrowing down sources by their category.
+-   URL-based filter preservation for easy sharing.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Prerequisites
 
-## Running unit tests
+Before you begin, ensure you have met the following requirements:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+-   Node.js and npm installed on your system. This project requires Node.js version `^12.14.0 || ^14.15.0`
+-   Angular CLI installed (`npm install -g @angular/cli`).
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To set up the project locally, follow these steps:
 
-## Further help
+1. Clone the repository:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    ```bash
+    git clone hhttps://github.com/efsamaras/news-list.git
+    ```
+
+2. Install project dependencies:
+
+    ```bash
+     npm install
+    ```
+
+## Usage
+
+To start the development server, run:
+
+```bash
+npm run start
+```
+
+Access the application at http://localhost:4200 in your web browser.
